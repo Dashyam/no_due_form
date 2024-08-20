@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "199573533447",
+    "project_id": "no-due-form",
+    "storage_bucket": "no-due-form.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:199573533447:android:b40f655858efb8b4730ba2",
+        "android_client_info": {
+          "package_name": "gndec.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLdiHwbDmLmQNxtF2QTVWfnldYSWvfTTQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
