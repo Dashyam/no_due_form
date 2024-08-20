@@ -5,7 +5,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class NoDueRequestPage extends StatefulWidget {
   final String userId;
 
-  NoDueRequestPage({required this.userId});
+  // NoDueRequestPage({required this.userId});
+  NoDueRequestPage({required this.userId}) {
+    assert(userId.isNotEmpty, 'User ID cannot be empty');
+    print('UserID: $userId');
+  }
 
   @override
   _NoDueRequestPageState createState() => _NoDueRequestPageState();
@@ -15,11 +19,19 @@ class _NoDueRequestPageState extends State<NoDueRequestPage> {
   late Future<AppUser> _userFuture;
 
   Future<AppUser> _fetchUserData() async {
+    if (widget.userId.isEmpty) {
+      throw Exception('User ID is empty');
+    }
+
     // Fetch user data from Firestore
     DocumentSnapshot doc = await FirebaseFirestore.instance
         .collection('students')
         .doc(widget.userId)
         .get();
+
+    if (!doc.exists) {
+      throw Exception('User not found');
+    }
     return AppUser.fromFirestore(doc);
   }
 
